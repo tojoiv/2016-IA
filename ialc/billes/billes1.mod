@@ -27,25 +27,69 @@ dvar int Salon in d;
 
 /* Paramétrage du solveur */
 execute {
-  cp.param.searchType = "DeepFirst";
+  cp.param.searchType = "DepthFirst";
   cp.param.workers =1;
 }
 
 
 /* Contraintes */
 constraints {
+  // Denis joue dans le Parc et n'a pas 4 ans, contrairement à l'enfant qui a des billes bleues.
   Denis != 4;
   Bleue == 4;
   Denis == Parc;
-  Jaune == 6;
-  Claudine == Jaune || Anne == Jaune;
+
+    // La fille de 6 ans a des billes jaunes.
+Jaune == 6;
+  // Claudine == Jaune || Anne == Jaune;
+  Bernard != 6 && Denis != 6;
+
+  //  L’enfant qui joue avec des billes noires est plus âgé que l’enfant qui joue dans le jardin mais plus jeune que Anne.
   Noire > Jardin;
   Noire < Anne;
+
+  // Anne, qui joue dans sa chambre, a 1 an de plus que l’enfant qui joue dans le salon.
   Anne == Chambre;
   Anne == Salon + 1;
+ 
+  Anne != Bernard;
+  Anne != Claudine;
+  Anne != Denis;
+  Bernard != Claudine;
+  Bernard != Denis;
+  Claudine != Denis;
+
+  Bleue != Jaune;
+  Bleue != Noire;
+  Bleue != Rouge;
+  Jaune != Noire;
+  Jaune != Rouge;
+  Noire != Rouge;
+
+  Parc != Chambre;
+  Parc != Jardin;
+  Parc != Salon;
+  Chambre != Jardin;
+  Chambre != Salon;
+  Jardin != Salon;
 }
 
 /* Post-traitement (Affichage Solution) */
 execute {
-  writeIn( "s = ", s);
+  writeIn( "Anne = ", Anne);
+  writeIn( "Bernard = ", Bernard);
+  writeIn( "Claudine = ", Claudine);
+  writeIn( "Denis = ", Denis);
+
+  writeIn( "Billes Bleues = ", Bleue);
+  writeIn( "Billes Jaunes = ", Jaune);
+  writeIn( "Billes Noires = ", Noire);
+  writeIn( "Billes Rouges = ", Rouge);
+
+  writeIn( "Parc = ", Parc);
+  writeIn( "Chambre = ", Chambre);
+  writeIn( "Jardin = ", Jardin);
+  writeIn( "Salon = ", Salon);
+
+
 }

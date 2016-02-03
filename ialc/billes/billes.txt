@@ -58,4 +58,26 @@ C =  {
   Anne = Chambre;
   Anne = Salon + 1;
 
+  // Contraintes de différence
+  Anne != Bernard;
+  Anne != Claudine;
+  Anne != Denis;
+  Bernard != Claudine;
+  Bernard != Denis;
+  Claudine != Denis;
+
+  Bleue != Jaune;
+  Bleue != Noire;
+  Bleue != Rouge;
+  Jaune != Noire;
+  Jaune != Rouge;
+  Noire != Rouge;
+
+  Parc != Chambre;
+  Parc != Jardin;
+  Parc != Salon;
+  Chambre != Jardin;
+  Chambre != Salon;
+  Jardin != Salon;
+
 }
