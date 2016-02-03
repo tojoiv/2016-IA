@@ -8,7 +8,7 @@ using CP;			/* Utilisation du solveur CP-Solver */
 
 
 /* Déclarations domaines et variables */
-int d = 4..7;
+range d = 4..7;
 
 dvar int Anne in d;
 dvar int Bernard in d;
@@ -42,7 +42,8 @@ constraints {
     // La fille de 6 ans a des billes jaunes.
 Jaune == 6;
   // Claudine == Jaune || Anne == Jaune;
-  Bernard != 6 && Denis != 6;
+  Bernard != 6;
+  Denis != 6;
 
   //  L’enfant qui joue avec des billes noires est plus âgé que l’enfant qui joue dans le jardin mais plus jeune que Anne.
   Noire > Jardin;
@@ -76,20 +77,20 @@ Jaune == 6;
 
 /* Post-traitement (Affichage Solution) */
 execute {
-  writeIn( "Anne = ", Anne);
-  writeIn( "Bernard = ", Bernard);
-  writeIn( "Claudine = ", Claudine);
-  writeIn( "Denis = ", Denis);
+  writeln( "Anne = ", Anne);
+  writeln( "Bernard = ", Bernard);
+  writeln( "Claudine = ", Claudine);
+  writeln( "Denis = ", Denis);
 
-  writeIn( "Billes Bleues = ", Bleue);
-  writeIn( "Billes Jaunes = ", Jaune);
-  writeIn( "Billes Noires = ", Noire);
-  writeIn( "Billes Rouges = ", Rouge);
+  writeln( "Billes Bleues = ", Bleue);
+  writeln( "Billes Jaunes = ", Jaune);
+  writeln( "Billes Noires = ", Noire);
+  writeln( "Billes Rouges = ", Rouge);
 
-  writeIn( "Parc = ", Parc);
-  writeIn( "Chambre = ", Chambre);
-  writeIn( "Jardin = ", Jardin);
-  writeIn( "Salon = ", Salon);
+  writeln( "Parc = ", Parc);
+  writeln( "Chambre = ", Chambre);
+  writeln( "Jardin = ", Jardin);
+  writeln( "Salon = ", Salon);
 
 
 }
