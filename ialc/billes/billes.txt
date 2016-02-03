@@ -19,16 +19,43 @@ jaune, noire ou rouge. On sait de plus que :
 /* Formalistion en tant que problème de satisfaction de contraintes */
 
 X = {
-	// TODO Mettre ici les noms de variables 
+	Anne,	Bernard,	Claudine,	Denis,
+	Bleue, 	Jaune, 		Noire, 		Rouge,
+	Parc, 	Chambre, 	Jardin, 	Salon
 }
 	
 D = {
-	// TODO Décrire ici domaines respectifs des varaibles 
+	d, d, d, d, d, d, d, d, d, d, d, d
 }
+
+où d = { 4, 5, 6, 7 }
+
+où Anne = 4   signifie que Anne a 4 ans.
+   Bleue = 5  signifie que la personne aux billes Bleue a 5 ans.
+   Parc = 7   signifie que la personne qui joue dans le Parc a 7 ans.
 
 
 C =  {
-   // TODO Décrire ici les contraintes en faisant précéder chaque contrainte
-   // (ou groupe de contraintes) par le texte de l'énoncé qui lui correspond.
+  // Phrase 1.
+  // Denis joue dans le Parc et n'a pas 4 ans, contrairement à l'enfant qui a des billes bleues.
+  Denis != 4;
+  Bleue = 4;
+  Denis = Parc;
+  
+
+  // Phrase 2.
+  // La fille de 6 ans a des billes jaunes.
+  Jaune = 6;
+  Claudine = Jaune || Anne = Jaune;
+
+  // Phrase 3.
+  //  L’enfant qui joue avec des billes noires est plus âgé que l’enfant qui joue dans le jardin mais plus jeune que Anne.
+  Noire > Jardin;
+  Noir < Anne;
+
+  // Phrase 4.
+  // Anne, qui joue dans sa chambre, a 1 an de plus que l’enfant qui joue dans le salon.
+  Anne = Chambre;
+  Anne = Salon + 1;
 
 }
