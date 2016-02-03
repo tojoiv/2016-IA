@@ -26,13 +26,26 @@ dvar int Jardin in d;
 dvar int Salon in d;
 
 /* Paramétrage du solveur */
-// TODO 
+execute {
+  cp.param.searchType = "DeepFirst";
+  cp.param.workers =1;
+}
 
 
 /* Contraintes */
-// TODO 
-
+constraints {
+  Denis != 4;
+  Bleue == 4;
+  Denis == Parc;
+  Jaune == 6;
+  Claudine == Jaune || Anne == Jaune;
+  Noire > Jardin;
+  Noire < Anne;
+  Anne == Chambre;
+  Anne == Salon + 1;
+}
 
 /* Post-traitement (Affichage Solution) */
-// TODO 
-
+execute {
+  writeIn( "s = ", s);
+}
