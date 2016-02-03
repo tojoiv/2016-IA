@@ -1,0 +1,34 @@
+/*********************************************
+Enoncé du problème :  
+
+Quatre enfants, Anne, Bernard, Claudine et Denis, ayant tous un âge différent 
+(entre 4 et 7 ans), jouent chacun à différents endroits avec des billes de couleur bleue,
+jaune, noire ou rouge. On sait de plus que : 
+
+1. Denis joue dans le parc et n’a pas 4 ans, contrairement à
+   l’enfant qui a des billes bleues.
+
+2. La fille de 6 ans a des billes jaunes.
+
+3. L’enfant qui joue avec des billes noires est plus âgé que l’enfant qui joue 
+   dans le jardin mais plus jeune que Anne.
+
+4. Anne, qui joue dans sa chambre, a 1 an de plus que l’enfant qui joue dans le salon.
+*********************************************/
+
+/* Formalistion en tant que problème de satisfaction de contraintes */
+
+X = {
+	// TODO Mettre ici les noms de variables 
+}
+	
+D = {
+	// TODO Décrire ici domaines respectifs des varaibles 
+}
+
+
+C =  {
+   // TODO Décrire ici les contraintes en faisant précéder chaque contrainte
+   // (ou groupe de contraintes) par le texte de l'énoncé qui lui correspond.
+
+}
