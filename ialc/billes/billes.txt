@@ -51,7 +51,7 @@ C =  {
   // Phrase 3.
   //  L’enfant qui joue avec des billes noires est plus âgé que l’enfant qui joue dans le jardin mais plus jeune que Anne.
   Noire > Jardin;
-  Noir < Anne;
+  Noire < Anne;
 
   // Phrase 4.
   // Anne, qui joue dans sa chambre, a 1 an de plus que l’enfant qui joue dans le salon.
