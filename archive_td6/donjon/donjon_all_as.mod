@@ -33,6 +33,7 @@ constraints {
 	nb["Nord-Ouest"] >= nb["Sud-Ouest"];
 	nb["Nord-Ouest"] >= nb["Nord-Est"];
 	nb["Nord-Ouest"] >= nb["Sud-Est"];
+	nb["Nord-Est"] >= nb["Sud-Ouest"];
 }
 
 /* Post-traitement (Affichage Solution) */

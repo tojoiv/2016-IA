@@ -1,4 +1,5 @@
 main {
+	cp.param.logVerbosity = "Quiet";
 	thisOplModel.generate();
 	cp.startNewSearch();
 	solutions = 0;
