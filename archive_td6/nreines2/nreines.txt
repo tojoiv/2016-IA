@@ -1,0 +1,15 @@
+/*********************************************
+Enoncé du problème :  
+
+Le problème des n reines consiste à déplacer n reines sur un damier
+de taille n ∗ n de telle façon que deux reines (se déplaçant comme
+aux jeu des échecs) ne soient jamais en position de prise mututelle.
+
+Un exemple de solution pour le problème des 4-reines : 
+
+	x  o  x  x
+	x  x  x  o
+	o  x  x  x  
+	x  x  o  x
+
+*********************************************/
