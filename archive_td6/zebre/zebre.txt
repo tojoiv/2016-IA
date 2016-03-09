@@ -26,3 +26,74 @@ Le problème consiste à retrouver pour chacun des habitants
 quelle est sa nationalité, son animal favori, sa profession, la couleur de sa maison 
 et notamment à identifier celui qui boit de l'eau et celui qui élève un zèbre.
 *********************************************/
+
+/* Formalistion en tant que problème de satisfaction de contraintes */
+
+X = {
+	Thé,		Café,		Lait,		JusFruit,	Eau,
+	Anglais, 	Espagnol,	Japonais,	Italien,	Norvégien,
+	Peintre, 	Sculpteur, 	Diplomate, 	Violoniste, 	Médecin,
+	Rouge, 		Vert, 		Blanc, 		Jaune, 		Bleu,
+	Chien, 		Escargot,	Renard,		Cheval,		Zebre 	
+}
+	
+D = d^25
+
+où d = { 1, 2, 3, 4, 5 }
+
+où 	Thé = 1 signifie que le propriétaire de la maison 1 boit du thé.
+	Anglais = 2 signifie que le propriétaire de la maison 2 est Anglais.
+	Peintre = 3 signifie que le propriétaire de la maison du milieu est Peintre.
+	Rouge = 4 signifie que la maison 4 est Rouge.
+	Chien = 5 signifie que le chien est dans la dernière maison, celle tout à droite.
+
+C =  {
+	// 1. L'anglais habite la maison rouge
+	Anglais == Rouge
+
+	// 2. L'espagnol possède un chien.
+	Espagnol == Chien
+
+	// 3. Le japonais est peintre.
+	Japonais == Peintre
+	
+	// 4. L'italien boit du thé.
+	Italien == Thé
+
+	// 5. Le norvégien habite la première maison à gauche.
+	Norvégien == 1
+
+	// 6. Le propriétaire de la maison verte boit du café.
+	Vert == Café
+
+	// 7. La maison verte est à droite de la blanche.
+	Vert == Blanc + 1 || Vert == Blanc - 1
+
+	// 8. Le sculpteur élève des escargots.
+	Sculpteur == Escargot
+
+	// 9. Le diplomate habite la maison jaune.
+	Diplomate == Jaune
+
+	// 10. On boit du lait dans la maison du milieu.
+	Lait == 3
+
+	// 11. Le norvégien habite à coté de la maison bleue.
+	Norvégien == Bleu + 1 || Norvégien == Bleu -1
+
+	// 12. Le violoniste boit des jus de fruits. 
+	Violoniste == JusFruit
+
+	// 13. Le renard est dans la maison voisine du médecin.
+	Renard == Médecin + 1 || Renard == Médecin -1
+
+	// 14. Le cheval est à coté de celle du diplomate.
+	Cheval == Diplomate + 1 || Cheval == Diplomate - 1
+
+	// Contraintes de différence
+	Thé != Café != Lait != JusFruit != Eau
+	Anglais != Espagnol != Japonais != Italien != Norvégien
+	Peintre != Sculpteur != Diplomate != Violoniste != Médecin
+	Rouge != Vert != Blanc != Jaune != Bleu
+	Chien != Escargot != Renard != Cheval != Zebre 	
+}
