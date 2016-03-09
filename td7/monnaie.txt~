@@ -1,0 +1,7 @@
+/*********************************************
+Enoncé du problème :
+
+Dans la monnaie européenne, il existe des pièces de 1, 2, 5, 10, 20 et 50 cts. On souhaite déterminer le nombre minimal de pièces nécessaires pour pouvoir reconstituer n'importe quelle somme strictement inférieure à 1€ (en précisant combien de pièces de chaque sorte)
+
+*********************************************/
+

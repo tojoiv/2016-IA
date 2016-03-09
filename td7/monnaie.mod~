@@ -1,0 +1,3 @@
+using CP;
+
+range r = 0..100;
