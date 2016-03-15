@@ -31,9 +31,10 @@ constraints {
 		(sum(j in d) carre[i][j]) == somme;
 		(sum(j in d) carre[j][i]) == somme;
 		(sum(j in d) carre[j][j]) == somme;
-		(sum(j in n..1) carre[i][j]) == somme;
-
+		
+		
 	}
+
 }
 
 //----- Post-traitement -----
