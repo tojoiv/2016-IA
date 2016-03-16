@@ -20,4 +20,5 @@ TachesChantier = {
 	<"Q", "Inspection generale",           2, {"P","S"}>,
 	<"R", "Nettoyage exterieur",           1, {"N","K","O"}>,
 	<"S", "Amenagement exterieur",         3, {"R"}>,
-}
+};
+
