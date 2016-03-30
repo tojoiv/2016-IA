@@ -16,27 +16,48 @@ tuple Ord{
 }
 
 //----------------------- Données ---------------------------
-Tache} taches = ...;        // les taches du probleme
+{Tache} taches = ...;        // les taches du probleme
 {Ord}   cords = ...;       // les contraintes d'ordonnancement entre taches
-int	  puissanceMax = ...;   // la puissance maximale de l'usine
+int	puissanceMax = ...;   // la puissance maximale de l'usine
 
 //----------------------- Pretraitement ---------------------------
 	    
-// A compléter si nécessaire
+execute {
+	cp.param.logVerbosity = "Quiet";
+}
+
+{string} codeTaches = {t.code | t in taches};
+
 
 //----------------------- Modèle ---------------------------
 
-// -- variables de décisions --
-
 // -- variables de commodité --
+int dureeTaches[codeTaches] = [ t.code : t.duree | t in taches ];   // code de chaque tache
+int sommeDuree = sum (t in taches) t.duree;       // duree du chantier si les taches sont executes les unes a la suite de autres.
+int minDuree = min (t in taches) t.duree;         // Duree minimale parmi toutes les taches
+
+// -- variables de décisions --
+// Les taches debutent a l'instance 0 jusqu'a la fin du chantier maximale - la duree minimal des taches
+dvar int debutTaches[codeTaches] in 0..(sommeDuree-minDuree); // debutTaches["A"] = 3 signifie que la tache A commence a 3.
+dvar int finTaches[codeTaches] in minDuree..sommeDuree; // finTaches["C"] = 5 signifie que la tache C finit a 7.
 
 // -- Critère d'optimisation --
+dvar int finChantier in 1..sommeDuree; 
 
 
 minimize 
-   // Objectif - A completer
+   finChantier;
+
 subject to {
-    // Contraintes - A completer
+    forall (t in taches) {
+		finTaches[t.code] == debutTaches[t.code] + t.duree;
+
+		forall (c in cords) {
+			finTaches[c.avant] <= debutTaches[c.apres];
+		}	
+	}
+
+	finChantier == max(i in codeTaches) finTaches[i];
     
 }	
 
@@ -44,5 +65,8 @@ subject to {
 //----------------------- Affichage Solution ---------------------------
 
 execute {
-    
+	writeln("La fin du chantier est après : " , finChantier, " jours");
+	for (i in codeTaches) {
+		writeln("Tache " , i, " == debut : ", debutTaches[i], " -- fin : ", finTaches[i]);
+	}	
 }
