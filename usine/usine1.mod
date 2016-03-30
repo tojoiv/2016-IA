@@ -39,7 +39,7 @@ int minDuree = min (t in taches) t.duree;         // Duree minimale parmi toutes
 dvar int debutTaches[codeTaches] in 0..(sommeDuree-minDuree); // debutTaches["A"] = 3 signifie que la tache A commence a 3.
 
 // -- variables de commodité --
-dvar int finTaches[codeTaches] in minDuree..sommeDuree; // finTaches["C"] = 5 signifie que la tache C finit a 7.
+dvar int finTaches[codeTaches] in minDuree..sommeDuree; // finTaches["C"] = 7 signifie que la tache C finit a 7.
 
 // -- Critère d'optimisation --
 dvar int finChantier in 1..sommeDuree; 
