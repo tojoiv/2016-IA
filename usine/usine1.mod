@@ -28,17 +28,17 @@ execute {
 
 {string} codeTaches = {t.code | t in taches};
 
-
-//----------------------- Modèle ---------------------------
-
-// -- variables de commodité --
 int dureeTaches[codeTaches] = [ t.code : t.duree | t in taches ];   // code de chaque tache
 int sommeDuree = sum (t in taches) t.duree;       // duree du chantier si les taches sont executes les unes a la suite de autres.
 int minDuree = min (t in taches) t.duree;         // Duree minimale parmi toutes les taches
 
+//----------------------- Modèle ---------------------------
+
 // -- variables de décisions --
 // Les taches debutent a l'instance 0 jusqu'a la fin du chantier maximale - la duree minimal des taches
 dvar int debutTaches[codeTaches] in 0..(sommeDuree-minDuree); // debutTaches["A"] = 3 signifie que la tache A commence a 3.
+
+// -- variables de commodité --
 dvar int finTaches[codeTaches] in minDuree..sommeDuree; // finTaches["C"] = 5 signifie que la tache C finit a 7.
 
 // -- Critère d'optimisation --
