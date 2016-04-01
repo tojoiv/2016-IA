@@ -1,0 +1,8 @@
+// --- Sessions ---
+session  AT002 Athletics	 12	20:20	23:25	OlympicStadium
+session  HB022 Handball		13	09:30	13:00	FutureArena
+
+// --- Zones ---
+zone		Maracanã		OlympicStadium  60  30
+zone		Barra		FutureArena
+

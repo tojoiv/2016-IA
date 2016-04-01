@@ -1,0 +1,14 @@
+// Cette instance regroupe tous les types d'entrée que vous pouvez
+// trouver dans les fichiers de données.
+// Utile pour tester vos fonctions de lecture
+
+nom = "enonce";
+fichiersDonnees = {
+	"../donneesInstances/enonce/sessions.txt",
+	"../donneesInstances/enonce/pits.txt",
+	"../donneesInstances/enonce/demandesInfos.txt",
+	"../donneesInstances/enonce/hotels.txt",
+	"../donneesInstances/enonce/transferts.txt",
+	"../donneesInstances/enonce/reservations.txt"
+};
+

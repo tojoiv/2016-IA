@@ -1,0 +1,14 @@
+// Reservations
+//			<idR> <dateDebiy> <nbJours> <nbChambres> <cat> programme <P1> | <P2> | ... | <Pnj>
+
+// exemple de réservation de 1 chambre pour trois jours, à compter du 10/08
+// dans un hotel de catégorie 2-3 étoiles, avec un programme léger
+
+reservation r1 10 3 1 2-3 programme GA009 | Corcovado HB018 | journeeLibre
+
+
+// une autre réservation aux mêmes dates de 3 chambres
+reservation r2 10 3 3  2 programme GA009 | journeeLibre | MuseuDeArte SAOO5
+
+// 
+memeHotel  r1  r2

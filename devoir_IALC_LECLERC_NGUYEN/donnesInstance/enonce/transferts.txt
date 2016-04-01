@@ -1,0 +1,24 @@
+// --- Temps de transfert entre zones (dans les deux sens) ---
+transfert	Barra		Deodoro		 50
+transfert	Barra		Maracanã	 90
+transfert	Barra		Copacabana	 70
+transfert	Deodoro		Maracanã	 70
+transfert	Deodoro		Copacabana	 90
+transfert	Maracanã	Copacabana	 30
+
+
+// --- Transfert des hotels vers les zones -----
+transfert	CopacabanaPalace		Barra		70
+transfert	CopacabanaPalace		Deodoro		90
+transfert	CopacabanaPalace		Copacabana	0
+transfert	CopacabanaPalace		Maracanã	70
+
+
+// --- Transfert des hotels vers les PITs -----
+transfert	CopacabanaPalace		Barra		70
+transfert	CopacabanaPalace		Deodoro		90
+transfert	CopacabanaPalace		Copacabana	 0
+transfert	CopacabanaPalace		Maracanã	30
+
+// --- Transfert entre PITs -----
+transfert	Corcovado			MuseuDeArte		120

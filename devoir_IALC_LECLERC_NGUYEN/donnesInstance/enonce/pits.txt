@@ -1,0 +1,11 @@
+// --- Points d'intérêt touristique ---
+//		Id			Duree		Ouverture/Fermeture		Jours
+pit Corcovado		3:00    	08:00 	19:00
+pit MuseuDeArte		4:00		10:00 	17:00 		2-7,9-14,16-21,30,31
+...
+
+// --- Temps de transfert entre PITs ---
+// TODO
+
+// --- Temps de transfert entre PITs et Zones Olympiques---
+// TODO
