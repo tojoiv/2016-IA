@@ -59,6 +59,9 @@ subject to {
 	}
 
 	finChantier == max(i in codeTaches) finTaches[i];
+
+	debutTaches["I"] >= debutTaches["H"]+10;
+	debutTaches["K"] != debutTaches["M"];
 	
 }
 
